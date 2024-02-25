@@ -2,11 +2,21 @@
 import './App.css';
 
 import React, { Component } from 'react'
+import NavBar from './Component/NavBar';
+import NewsComponent from './Component/NewsComponent';
 
 export default class App extends Component {
   render() {
     return (
-      <div><h1>Aditya Deshmukh here</h1></div>
+
+      <div>
+
+
+        <NavBar />
+        <NewsComponent />
+
+
+      </div>
     )
   }
 }
