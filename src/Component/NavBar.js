@@ -9,7 +9,7 @@ export default class NavBar extends Component {
     <a className="navbar-brand" href='/' >My-News App</a>
     <form className="d-flex" role="search">
       <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button className="btn btn-outline-success" type="submit">Search</button>
+      <a href="/"> <button className="btn btn-outline-success" type="submit">  Search  </button></a>
     </form>
   </div>
 </nav>

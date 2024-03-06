@@ -2,279 +2,72 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export default class NewsComponent extends Component {
-  articles = [
-    {
-      "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
-      },
-      "author": "TOI City Desk",
-      "title": "Big explosion in Bengaluru's Rameshwaram cafe, several feared injured - The Times of India",
-      "description": "An explosion in Bengaluru's Rameshwaram café injured four people. The blast is suspected to be a cylinder blast. The incident is being investigated by",
-      "url": "https://timesofindia.indiatimes.com/city/bengaluru/big-explosion-in-bengalurus-rameshwaram-cafe-several-feared-injured/articleshow/108134012.cms",
-      "urlToImage": "https://static.toiimg.com/thumb/msid-108134120,width-1070,height-580,imgsize-64226,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
-      "publishedAt": "2024-03-01T10:14:00Z",
-      "content": "Anant Ambani, Radhika Merchant Wedding: Ambanis perform Anna Sewa, serve these dishes"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "India Today"
-      },
-      "author": "Ankita Garg",
-      "title": "MWC 2024: With transparent displays and bendable phones, an exciting tone has been set for the year - India Today",
-      "description": "MWC 2024 made a lot of noise this year too all thanks to the innovative products that were showcased by tech companies Here is a look at some of the best innovative gadgets that I saw at the tech show",
-      "url": "https://www.indiatoday.in/technology/news/story/mwc-2024-with-transparent-displays-and-bendable-phones-an-exciting-tone-has-been-set-for-the-year-2508953-2024-03-01",
-      "urlToImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202403/motorola-rollable-phone-010345317-16x9_0.png?VersionId=P2eM13w2N8O95yvvI.V5V7SW0BfLuTL0",
-      "publishedAt": "2024-03-01T09:14:44Z",
-      "content": "Mobile World Congress (MWC) 2024 made a lot of noise this year, all thanks to the innovative products that were showcased by tech companies. From transparent laptop displays to rollable phones to AI-… [+6084 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Livemint"
-      },
-      "author": "Akriti Anand",
-      "title": "Lok Sabha Elections 2024: BJP finalises names of nearly 155 candidates, says report | Mint - Mint",
-      "description": "Lok Sabha Elections 2024: A report claimed that the BJP plans to name at least 50 percent of its candidates by March 10",
-      "url": "https://www.livemint.com/politics/news/lok-sabha-elections-2024-bjp-finalises-names-of-nearly-155-candidates-says-report-11709283612311.html",
-      "urlToImage": "https://www.livemint.com/lm-img/img/2024/03/01/1600x900/PTI03-01-2024-000057A-0_1709283648514_1709283668611.jpg",
-      "publishedAt": "2024-03-01T09:07:13Z",
-      "content": "The Bharatiya Janata Party (BJP) may soon announce its first list of nearly 155 candidates for the Lok Sabha Elections 2024, sources told news agency PTI on Friday. Several other reports claimed that… [+2336 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Ddnews.gov.in"
-      },
-      "author": null,
-      "title": "Tracking the solar source of the most intense geomagnetic storm last year - DD News",
-      "description": "DDNews, News, National News, Indian News, Sports News",
-      "url": "https://ddnews.gov.in/sci-tech/tracking-solar-source-most-intense-geomagnetic-storm-last-year",
-      "urlToImage": null,
-      "publishedAt": "2024-03-01T09:01:00Z",
-      "content": "In late-April 2023, a severe geomagnetic storm in Earths magnetosphere led to an vivid display of the aurora in in lower latitudes extending to places like Ladakh. Astronomers have used multiwaveleng… [+3918 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "India TV News"
-      },
-      "author": "Health Desk, Kristina Das",
-      "title": "Deepika Padukone pregnant at 38: What extra care does a pregnant woman need to take while in her late 30s? - India TV News",
-      "description": "Pregnancy in the late 30s can be a rewarding and fulfilling experience with proper care and support. By addressing potential risks, optimizing health before conception, and receiving comprehensive prenatal care, women can increase their chances of having a he…",
-      "url": "https://www.indiatvnews.com/health/deepika-padukone-pregnant-at-38-what-extra-care-does-a-pregnant-woman-need-to-take-while-in-her-late-30s-2024-03-01-919400",
-      "urlToImage": "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2024/03/deepika-pregnancy-1709279772.jpg",
-      "publishedAt": "2024-03-01T08:28:56Z",
-      "content": "Bollywood diva Deepika Padukone has recently announced that she is expecting her first child with her husband, actor Ranveer Singh. The actress successfully conceived in her late 30s. However, as wom… [+4525 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Mirage News"
-      },
-      "author": "Mirage News",
-      "title": "UV Radiation from Stars Blocks Jupiter-Like Planet Formation - Mirage News",
-      "description": null,
-      "url": "https://www.miragenews.com/uv-radiation-from-stars-blocks-jupiter-like-1185383/",
-      "urlToImage": null,
-      "publishedAt": "2024-03-01T08:12:00Z",
-      "content": null
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Abplive.com"
-      },
-      "author": "ABP News Bureau",
-      "title": "'Biggest Enemies Of Development': PM Modi Slam Congress, JMM In Jharkhand's Dhanbad - ABP Live",
-      "description": "Addressing a public rally in Jharkhand's Dhanbad, PM Modi said: 'Only one sound is audible everywhere and that is 'Ab ki Baar, 400 paar'.",
-      "url": "https://news.abplive.com/elections/pm-narendra-modi-in-jharkhand-speaks-at-dhandbad-lok-sabha-elections-2024-1668641",
-      "urlToImage": "https://feeds.abplive.com/onecms/images/uploaded-images/2024/03/01/4e12d2356578ec2bfb32360c6584b3071709280022628556_original.jpg?impolicy=abp_cdn&imwidth=1200&imheight=628",
-      "publishedAt": "2024-03-01T08:00:47Z",
-      "content": null
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Hindustan Times"
-      },
-      "author": "HT Sports Desk",
-      "title": "Wriddhiman Saha reacts to BCCI's Ishan-Iyer move: 'Forcefully, you can't...' - Hindustan Times",
-      "description": "Saha's statement came in the wake of BCCI's move to exclude Shreyas Iyer and Ishan Kishan from the annual retainers list for the 2023-24 season. | Cricket",
-      "url": "https://www.hindustantimes.com/cricket/wriddhiman-saha-reacts-to-bcci-ishan-kishan-shreyas-iyer-move-forcefully-you-cannot-101709275382511.html",
-      "urlToImage": "https://www.hindustantimes.com/ht-img/img/2024/03/01/1600x900/saha_ishan_ieyre_1709276210242_1709276225003.jpg",
-      "publishedAt": "2024-03-01T07:43:21Z",
-      "content": "Veteran India wicketkeeper Wriddhiman Saha reckoned nothing can be done \"forcefully\" if a cricketer does not wish to participate in domestic cricket. The statement came in the wake of BCCI's move to … [+2444 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "The Siasat Daily"
-      },
-      "author": "Indo-Asian News Service",
-      "title": "realme 12 Series 5G: A new chapter in value-driven premium smartphones - The Siasat Daily",
-      "description": "New Delhi: In a bold move to redefine the mid-premium smartphone segment, realme is set to launch its latest entrants in the number series - the realme 12+ 5G and realme 12 5G. These new additions are poised to be game-changers, embodying realme's guiding pri…",
-      "url": "https://www.siasat.com/realme-12-series-5g-a-new-chapter-in-value-driven-premium-smartphones-2985150/",
-      "urlToImage": "https://cdn.siasat.com/wp-content/uploads/2024/03/Realme1-.jpg",
-      "publishedAt": "2024-03-01T07:33:00Z",
-      "content": "New Delhi: In a bold move to redefine the mid-premium smartphone segment, realme is set to launch its latest entrants in the number series – the realme 12+ 5G and realme 12 5G. These new additions ar… [+2572 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "News18"
-      },
-      "author": "Mohammad Haris",
-      "title": "India's Manufacturing Sector Growth Hits 5-Month High in February on Robust Demand - News18",
-      "description": "The seasonally adjusted HSBC India Manufacturing Purchasing Managers' Index (PMI) rose from 56.5 in January to 56.9 in February, pointing to the strongest improvement in the health of the sector since September 2023",
-      "url": "https://www.news18.com/business/indias-manufacturing-sector-growth-hits-5-month-high-in-february-on-robust-demand-8798873.html",
-      "urlToImage": "https://images.news18.com/ibnlive/uploads/2023/09/electronics-169502133416x9.jpg",
-      "publishedAt": "2024-03-01T07:21:00Z",
-      "content": "Indias manufacturing sector growth climbed to a five-month high in February amid a sharper uptick in factory production and sales, supported by both domestic and external demand, a monthly survey sai… [+2348 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Livemint"
-      },
-      "author": "Karishma Pranav Bhavsar",
-      "title": "Laapataa Ladies reviews: Kiran Rao directed movie gets thumps up from Netizens, ‘full of flavor, chaos…’ | Mint - Mint",
-      "description": "Kiran Rao directed Laapataa Ladies set in 2001 rural India has been released in theaters today and initial reviews show audience response from netizens.",
-      "url": "https://www.livemint.com/news/trends/laapataa-ladies-review-kiran-rao-directed-movie-gets-thumps-up-from-netizens-full-of-flavor-chaos-11709261138784.html",
-      "urlToImage": "https://www.livemint.com/lm-img/img/2024/03/01/1600x900/Laapataa_Ladies_1709265507174_1709265507346.png",
-      "publishedAt": "2024-03-01T07:07:12Z",
-      "content": "Kiran Rao directed Laapataa Ladies starring Nitanshi Goel, Pratibha Ranta, Sparsh Shrivastava along with Ravi Kishan released in theatres today i.e. on 1 March. Public reviews are out on social media… [+2783 chars]"
-    },
-    {
-      "source": {
-        "id": "al-jazeera-english",
-        "name": "Al Jazeera English"
-      },
-      "author": "Al Jazeera",
-      "title": "At least 45 killed in Bangladesh after fire breaks out at shopping mall - Al Jazeera English",
-      "description": "People dining out and shopping suffocated or jumped to their deaths as firefighters battled to douse the flames.",
-      "url": "https://www.aljazeera.com/news/2024/3/1/at-least-45-people-killed-in-bangladesh-after-fire-starts-at-shopping-mall",
-      "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2024/03/AP24061048129619-1709275783.jpg?resize=1920%2C1440",
-      "publishedAt": "2024-03-01T07:04:22Z",
-      "content": "A massive blaze in a six-storey shopping mall in the Bangladeshi capital, Dhaka, has killed at least 45 people and wounded dozens.\r\nThe fire, which struck Green Cozy Cottage Shopping Mall late on Thu… [+2322 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "India Today"
-      },
-      "author": "Rishabh Sharma",
-      "title": "Minister's 'terrible mishandling' led Tamil Nadu lose Isro spaceport to Andhra - India Today",
-      "description": "Criticising the DMK government in Tamil Nadu over its Isro ad 039blunder039 BJP leader Annamalai recounted an incident from the 1960s when the state lost the opportunity to host Isro039s first spaceport because of the inefficiency of a DMK minister Here039s t…",
-      "url": "https://www.indiatoday.in/history-of-it/story/isro-tamil-nadu-launchpad-spaceport-andhra-pradesh-sriharikota-dmk-mathiyazhagan-vikram-sarabhai-dmk-minister-2508871-2024-03-01",
-      "urlToImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202403/satish-dhawan-space-centre-294551736-16x9_0.jpeg?VersionId=cqwUr1pCNlMf4KU4PufuLCjOZjuc.q7j",
-      "publishedAt": "2024-03-01T07:00:18Z",
-      "content": "Recently, a DMK minister embarrassed his party's government in Tamil Nadu by printing an advertisement in local newspapers featuring a rocket with the five-star red flag of China.\r\nThe advertisement,… [+3883 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "News18"
-      },
-      "author": "Sumedha Kirti, News Desk",
-      "title": "'Take Back 6 Rebels': Vikramaditya's Talk with CM Sukhu After Meeting Congress MLAs - News18",
-      "description": "Himachal Pradesh Assembly Speaker Kuldeep Singh Pathania on Thursday disqualified the six rebel MLAs.",
-      "url": "https://www.news18.com/politics/take-back-6-rebels-vikramadityas-talk-with-cm-sukhu-after-meeting-congress-mlas-8798693.html",
-      "urlToImage": "https://images.news18.com/ibnlive/uploads/2024/02/himachal-political-crisis-2024-02-ab6f8e7c873a06e28f1cb1963a77a3c0-16x9.jpg?impolicy=website&width=1200&height=675",
-      "publishedAt": "2024-03-01T06:59:00Z",
-      "content": "Himachal Pradeshs high-profile minister Vikramaditya Singh reportedly met the the six rebel Congress MLAs at hotel in Haryanas Panchkula on Friday. Singh, who is the son of Himachal Congress presiden… [+1742 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "NDTV News"
-      },
-      "author": null,
-      "title": "Why Does Leap Year Not Fall On Dec 32? Here's The Answer - NDTV",
-      "description": "Have you ever wondered why the extra day of the leap year falls on February 29, an odd date in the middle of the year, and not at the end of the year on December 32? There is a simple answer, and a slightly more complex one.",
-      "url": "https://www.ndtv.com/world-news/why-does-leap-year-not-fall-on-dec-32-heres-the-answer-5155215",
-      "urlToImage": "https://c.ndtvimg.com/2024-03/sjdmgq0o_leap-year-generic-leap-day-generic-pixabay_625x300_01_March_24.png?im=FaceCrop,algorithm=dnn,width=1200,height=738?ver-20240117.07",
-      "publishedAt": "2024-03-01T06:43:24Z",
-      "content": "Why does the lead day fall on February 29 and not December 32. Read to know more\r\nDublin: Have you ever wondered why the extra day of the leap year falls on February 29, an odd date in the middle of … [+5327 chars]"
-    },
-    {
-      "source": {
-        "id": "the-times-of-india",
-        "name": "The Times of India"
-      },
-      "author": "TIMESOFINDIA.COM",
-      "title": "10 most dangerous viruses on earth - The Times of India",
-      "description": "Harmful viruses can devastate human health, causing a range of effects from mild symptoms to severe illness, organ damage, and even death. They can lead to significant socioeconomic impacts through healthcare burdens, and societal disruption during outbreaks.",
-      "url": "https://timesofindia.indiatimes.com/life-style/health-fitness/web-stories/viruses-that-are-dangerous-to-human-health/photostory/108128675.cms",
-      "urlToImage": "https://static.toiimg.com/thumb/msid-108129095,imgsize-933912,width-900,height-1200,resizemode-6/108129095.jpg",
-      "publishedAt": "2024-03-01T06:30:00Z",
-      "content": "Dengue is transmitted by Aedes mosquitoes and causes flu-like symptoms, including high fever, severe headache, pain behind the eyes, joint and muscle pain, rash, and mild bleeding. Severe cases can l… [+56 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "The Siasat Daily"
-      },
-      "author": "Rasti Amena",
-      "title": "Jhalak Dikhhla Jaa 11 winner Manisha Rani takes home Rs… - The Siasat Daily",
-      "description": "Mumbai: Fans are going gaga over the news of Manisha Rani's big win in Jhalak Dikhhla Jaa 11. The grand finale of the popular dance show is scheduled for tomorrow, March 2 and its shooting took place on Thursday at Mumbai's Film City. Insiders are buzzing wit…",
-      "url": "https://www.siasat.com/jhalak-dikhhla-jaa-11-winner-manisha-rani-takes-home-rs-2985082/",
-      "urlToImage": "https://cdn.siasat.com/wp-content/uploads/2024/03/manisha-rani-trophy.jpg",
-      "publishedAt": "2024-03-01T06:13:56Z",
-      "content": "Mumbai: Fans are going gaga over the news of Manisha Rani’s big win in Jhalak Dikhhla Jaa 11. The grand finale of the popular dance show is scheduled for tomorrow, March 2 and its shooting took place… [+1167 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "BBC News"
-      },
-      "author": null,
-      "title": "Anant Ambani: World's rich in India for tycoon son's pre-wedding gala - BBC.com",
-      "description": "Mark Zuckerberg and Bill Gates are among guests at a pre-wedding party for billionaire Mukesh Ambani's son.",
-      "url": "https://www.bbc.com/news/world-asia-india-68443536",
-      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/CEFB/production/_132778925_gettyimages-1250221913-594x594.jpg",
-      "publishedAt": "2024-03-01T06:03:54Z",
-      "content": "By Zoya MateenBBC News, Delhi\r\nThe Ambani family at the engagement of Radhika Merchant (third from left) and Anant Ambani (fourth from left) in January 2023\r\nSome of the world's most influential peop… [+3290 chars]"
-    },
-    {
-      "source": {
-        "id": null,
-        "name": "Livemint"
-      },
-      "author": "Asit Manohar",
-      "title": "Nifty 50, Sensex gain over 1% each: Why Indian stock market is rising today — explained with 5 reasons | Mint - Mint",
-      "description": "Strong GDP growth for India, ease in the US inflation, buzz in banking and other PSU firms are some of the major reasons for the bull trend in the Indian stock market, say experts.",
-      "url": "https://www.livemint.com/market/stock-market-news/why-indian-stock-market-is-rising-today-explained-with-5-reasons-11709272082242.html",
-      "urlToImage": "https://www.livemint.com/lm-img/img/2024/03/01/1600x900/Stock_market_today_Nifty_50_Sensex_today_1709275192582_1709275192912.png",
-      "publishedAt": "2024-03-01T06:01:03Z",
-      "content": "The stock market on Friday witnessed strong buying after data showed a stellar GDP growth for India for the third quarter of the current financial year. Most of the sectors are in the green zone exce… [+3347 chars]"
-    },
-    {
-      "source": {
-        "id": "the-hindu",
-        "name": "The Hindu"
-      },
-      "author": "The Hindu",
-      "title": "WTO MC13 | Talks on to break impasse over agri, fisheries issues - The Hindu",
-      "description": null,
-      "url": "https://www.thehindu.com/business/wtos-5th-day-meet-talks-on-to-break-impasse-over-agri-fisheries-issues/article67902759.ece",
-      "urlToImage": null,
-      "publishedAt": "2024-03-01T05:53:00Z",
-      "content": null
-    }
-  ]
+
   constructor() {
     super()
     console.log("I am News Component Constructor");
     this.state = {
-      articles: this.articles
+      articles: [],
+      loading: false,
+      page: 1
+
+
     }
   }
+  async componentDidMount() {
+
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=1&pagesize=9"
+    let data = await fetch(url)
+    let response = await data.json()
+    console.log(response);
+    this.setState({
+      articles: response.articles,
+      totalresults: response.totalResults
+    })
+
+  }
+
+  prevpage = async () => {
+
+    console.log("Previous Button");
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=${this.state.page - 1}&pagesize=9`
+    let data = await fetch(url)
+    let response = await data.json()
+    console.log(response);
+    this.setState({
+      articles: response.articles,
+      page: this.state.page - 1
+
+    })
+
+  }
+
+  nextpage = async () => {
+    console.log("Next Button");
+
+    if (this.state.page + 1 >= Math.ceil(this.state.totalresults / 9)) {
+
+
+
+    }
+    else {
+
+      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=${this.state.page + 1}&pagesize=9`
+      let data = await fetch(url)
+      let response = await data.json()
+      console.log(response);
+      this.setState({
+        articles: response.articles,
+        page: this.state.page + 1
+      })
+    }
+
+  }
+
   render() {
     return (
       <>
-        <h1 style={{ textAlign: "center" }} className='my-3'  >Top Headlines - NEWS</h1>
+        <h1  className='my-3 text-center '  >Top Headlines - NEWS</h1>
 
         <div className="container">
           <div className="row">
@@ -282,12 +75,17 @@ export default class NewsComponent extends Component {
 
               return <div className="col-md-4 col-s-1" key={element.url} >
 
-                <NewsItem imgurl={element.urlToImage} title={element.title} description={element.description} newsurl = {element.url}  />
+                <NewsItem imgurl={element.urlToImage} title={element.title} description={element.description} newsurl={element.url} newsdate={element.publishedAt} newssource={element.source.name} />
               </div>
 
             })}
 
 
+          </div>
+
+          <div className="container d-flex justify-content-between my-3  ">
+            <button disabled={this.state.page <= 1} type="button" className="btn btn-danger" onClick={this.prevpage} >Previous</button>
+            <button type="button" className="btn btn-danger" onClick={this.nextpage} >Next</button>
           </div>
         </div>
 
