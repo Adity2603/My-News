@@ -1,16 +1,34 @@
 import React, { Component } from 'react'
+import {  
+  Link
+} from "react-router-dom";
 
 export default class NavBar extends Component {
   render() {
     return (
       <>
-      <nav className="navbar bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
-    <a className="navbar-brand" href='/' >My-News App</a>
-    <form className="d-flex" role="search">
-      <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-      <a href="/"> <button className="btn btn-outline-success" type="submit">  Search  </button></a>
-    </form>
+    <Link className="navbar-brand" to="/">MY-NEWS</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse mx-3 " id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/">General</Link>
+        </li> <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/science">Science</Link>
+        </li> <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/sports">Sports</Link>
+        </li> <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/entertainment">Entertainment</Link>
+        </li> 
+       
+        
+       
+      </ul>
+    </div>
   </div>
 </nav>
       </>

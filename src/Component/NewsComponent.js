@@ -1,7 +1,22 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
+import PropTypes from 'prop-types'
 
 export default class NewsComponent extends Component {
+
+  static defaultProps = {
+
+    country : 'in',
+    category :'general'
+
+  }
+
+  static propTypes = {
+
+    country : PropTypes.string,
+    category :PropTypes.string
+
+  }
 
   constructor() {
     super()
@@ -16,7 +31,7 @@ export default class NewsComponent extends Component {
   }
   async componentDidMount() {
 
-    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=1&pagesize=9"
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=1&pagesize=9`
     let data = await fetch(url)
     let response = await data.json()
     console.log(response);
@@ -30,7 +45,7 @@ export default class NewsComponent extends Component {
   prevpage = async () => {
 
     console.log("Previous Button");
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=${this.state.page - 1}&pagesize=9`
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=${this.state.page - 1}&pagesize=9`
     let data = await fetch(url)
     let response = await data.json()
     console.log(response);
@@ -52,7 +67,7 @@ export default class NewsComponent extends Component {
     }
     else {
 
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=${this.state.page + 1}&pagesize=9`
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1bb7fd4ea2d040159c32133d67a6d2dd&page=${this.state.page + 1}&pagesize=9`
       let data = await fetch(url)
       let response = await data.json()
       console.log(response);
