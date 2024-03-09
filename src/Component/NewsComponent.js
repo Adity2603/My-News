@@ -63,8 +63,14 @@ export default class NewsComponent extends Component {
     }
 
   }
+  
 
   render() {
+
+
+    
+  
+
     return (
       <>
         <h1  className='my-3 text-center '  >Top Headlines - NEWS</h1>
